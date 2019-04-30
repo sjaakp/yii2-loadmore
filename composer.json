@@ -1,0 +1,22 @@
+{
+    "name": "sjaakp/yii2-loadmore",
+    "description": "Load More button for Yii 2.0 GridView or ListView",
+    "keywords": ["yii", "yii2", "extension", "pager", "GridView", "ListView", "data"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sjaak Priester",
+            "email": "sjaak@sjaakpriester.nl",
+            "homepage": "https://sjaakpriester.nl"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "sjaakp\\loadmore\\": ""
+        }
+    }
+}
