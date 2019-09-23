@@ -69,11 +69,15 @@ That's all that's needed for basic functionality. The Load More button will appe
     ])  ?>
 	...
 
-**LoadMorePager** has three options:
+**LoadMorePager** has four options:
 
 #### label ####
 
 `string` The text of the Load More button. Default: `'Load more'`.
+
+#### id ####
+
+`string` The HTML ID of the Load More button. If not set (default) it will be auto-generated.
 
 #### options ####
 
@@ -100,7 +104,7 @@ In its basic setup, **LoadMorePager** will not update the **GridView**'s or **Li
 	?>
     ...
     <?= GridView::widget([
-        'dataProvider' => ...
+        'dataProvider' => ...,
         'pager' => [
             'class' => LoadMorePager::class,
             'label' => 'Show more data'
@@ -186,6 +190,27 @@ into:
 
 This makes the server only render the subview if an Ajax call is made by the
  Load More button.
+ 
+**Important:** if you use this technique, be sure to set an explicit `id` to the **GridView**
+or the **ListView**, as well as to the **LoadMorePager**, like so:
+
+	<?php
+	    use yii\grid\GridView;
+	    use sjaakp\loadmore\LoadMorePager;
+	?>
+    ...
+    <?= GridView::widget([
+        'dataProvider' => ...,
+        'id' => 'myGrid',
+        'pager' => [
+            'class' => LoadMorePager::class,
+            'id' => 'myPager',
+            // ...other LoadMorePager options, like 'label'...
+        ], 
+        // ...other GridView options, like 'columns'... 
+    ])  ?>
+	...
+  
  
 ### How do I change the number of returned items?
 
