@@ -6,15 +6,15 @@
  * Sjaak Priester, Amsterdam 29-04-2019.
  */
 
-(function($) {
+(function ($) {
     "use strict";
-    $.fn.loadmore = function(options)  {
-        return this.each(function() {
+    $.fn.loadmore = function (options) {
+        return this.each(function () {
 
             this.options = options;
             this.page = 1;
 
-            $(this).click(function(e) {
+            $(this).click(function (e) {
                 e.preventDefault();
 
                 let url = new URL(document.location);
@@ -27,19 +27,19 @@
                 $.ajax({
                     url: url.href,
                     dataType: 'html',
-                    error: function(x, s, err)  { console.log(err);},
-                    success: function(data, s, x) {
+                    error: function (x, s, err) { console.log(err); },
+                    success: function (data, s, x) {
                         let loader = $(e.target),
                             list = loader.parent();
 
-                        list.find('[data-key]').last().after($(data).find('#' + e.target.id).parent().find('[data-key]'));
-                        list.find(".summary-end").text(list.find('[data-key]').length);
+                        list.children('[data-key]').last().after($(data).find('#' + e.target.id).parent().children('[data-key]'));
+                        list.children(".summary-end").text(list.find('[data-key]').length);
 
-                        if (that.page >= that.options.pageCount)  {
+                        if (that.page >= that.options.pageCount) {
                             loader.remove();
                         }
                     },
-                    complete: function(x, s)    {
+                    complete: function (x, s) {
                         $(that.options.indicator).removeClass('show');
                     }
                 });
@@ -47,4 +47,4 @@
             return this;
         });
     };
-} (jQuery));
+}(jQuery));
