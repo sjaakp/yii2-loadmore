@@ -3,6 +3,10 @@ yii2-loadmore
 
 #### Load More button for Yii2 ####
 
+[![Latest Stable Version](https://poser.pugx.org/sjaakp/yii2-loadmore/v/stable)](https://packagist.org/packages/sjaakp/yii2-loadmore)
+[![Total Downloads](https://poser.pugx.org/sjaakp/yii2-loadmore/downloads)](https://packagist.org/packages/sjaakp/yii2-loadmore)
+[![License](https://poser.pugx.org/sjaakp/yii2-loadmore/license)](https://packagist.org/packages/sjaakp/yii2-loadmore)
+
 **LoadMorePager**, the main part of the **yii2-loadmore** package,
  is a widget that can be used as a pager for a 
  [GridView](https://www.yiiframework.com/doc/api/2.0/yii-grid-gridview "Yii2") or a 

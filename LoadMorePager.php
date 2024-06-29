@@ -16,7 +16,7 @@ use yii\helpers\Html;
 use yii\helpers\Json;
 
 /**
- * Class Collapse
+ * Class LoadMorePager
  * @package sjaakp\loadmore
  */
 class LoadMorePager extends Widget
